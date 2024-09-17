@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//import react libraries
+import React from "react"; // what a component is and how multiple comps work together.
+import  ReactDOM  from "react-dom/client"; // how to get up comp and show it in browser.
+import AppThree from "./PicsApp/AppThree";
+// import searchImages from "./PicsApp/api";
+import Appfour from "./BookApp/Appfour";
+// import BooksContext from "./BookApp/context/books";
+import { Provider } from "./BookApp/context/books";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+// searchImages('cars')
+//get a reference to the div id with root
+const el = document.getElementById('root');
+
+//tell react to take control of element
+const root = ReactDOM.createRoot(el);
+
+
+//show component on screen
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+<Provider>
+<Appfour/>
+</Provider>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+)
